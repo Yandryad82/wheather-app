@@ -27,17 +27,24 @@ const WeatherToday = () => {
   const tempctotempf = () => {
     setChangeTemp(!changeTemp);
   }
+ 
+  const imgSol = "https://lh6.ggpht.com/E62FdNiGOnq0I77Xl5B7YMa9c2PFpAlK1zW-gi4jX1auhjdSwhjfRWgiDSd15txRNKoB=w1200-h630-p-k-no-nu";
+
+  const imgNub = "https://static.vecteezy.com/system/resources/previews/012/806/414/original/3d-cartoon-weather-rain-clouds-with-thunderstorm-dark-cloud-sign-with-lightning-isolated-on-transparent-background-3d-render-illustration-png.png"
 
   const [backgroundImage, setBackgroundImage] = useState(true);
 
-  const imgSol = "https://lh6.ggpht.com/E62FdNiGOnq0I77Xl5B7YMa9c2PFpAlK1zW-gi4jX1auhjdSwhjfRWgiDSd15txRNKoB=w1200-h630-p-k-no-nu";
-
-  const imgNub = ""
-
-  const changeImage = () => {
-    setBackgroundImage(!backgroundImage);
+  let time;
+  
+  if(data.clouds?.all >= 90) {
+    time = true
+  }else{
+    time = false
   }
   
+  const changeImage = () => {
+    setBackgroundImage(imgNub)
+  }
   //
   
   return (
@@ -56,7 +63,7 @@ const WeatherToday = () => {
       <div className='information-container'>
         <div className='icon-weather-state'>
           
-          <img src="https://lh6.ggpht.com/E62FdNiGOnq0I77Xl5B7YMa9c2PFpAlK1zW-gi4jX1auhjdSwhjfRWgiDSd15txRNKoB=w1200-h630-p-k-no-nu" alt="" />
+          <img src={time ? imgNub : imgSol } alt="" />
         </div>
         <div className='icons-information'>
           <h3>Weather Informacion</h3>
