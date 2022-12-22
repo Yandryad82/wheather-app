@@ -1,0 +1,142 @@
+.general-container-app {
+    width: 440px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgb(57, 142, 185);
+    border-radius: 10px;
+    box-shadow: 12px 15px 6px 3px rgba(0, 0, 0, 0.4);
+}
+
+.container-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    
+}
+
+.container-date {
+    width: 100%;
+    padding: 0 30px;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.container-date span {
+    font-size: 15px;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.container-date i {
+    font-size: 30px;
+    color: red;
+}
+
+.container-termometer-icon{
+    width: 3%;
+    padding: 0;
+    display: flex;
+    gap: .5rem;
+    position: absolute;
+    margin-left: -360px;
+    margin-top: -180px;
+}
+
+.container-termometer-icon i {
+    font-size: 45px;
+    color: red;
+}
+
+.container-termometer-icon span {
+    font-size: 20px;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.container-title h1 {
+    color: darkorange;
+    font-weight: bold;
+}
+
+.information-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.information-container i {
+    font-size: 20px;
+    color: white;
+}
+
+.information-container span {
+    font-size: 15px;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.icon-weather-state img {
+    width: 140px;
+    height: 130px;
+}
+
+.icons-information {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    justify-content: center;
+    align-items: flex-start;
+    padding: .1rem;
+}
+
+.icons-information h3 {
+    color: red;
+}
+
+.container-wind-speed {
+    display: flex;
+    gap: .5rem;
+}
+
+.container-cloud {
+    display: flex;
+    gap: .5rem;
+}
+
+.container-humididy {
+    display: flex;
+    gap: .5rem;
+}
+
+.container-btn button {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 3rem;
+}
+
+.serch-city-container {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    
+}
+
+.serch-city-container input {
+    border-radius: 3px;
+    
+}
+
+.serch-city-container button {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+}
