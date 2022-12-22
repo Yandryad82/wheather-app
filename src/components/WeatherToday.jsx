@@ -69,7 +69,7 @@ const WeatherToday = () => {
           <span>Clouds: {data.clouds?.all} %</span>
             </div>
           <div className='container-humididy'>
-            <i className="fa-solid fa-temperature-three-quarters"></i>
+          <i class='bx bx-cloud-rain bx-sm'></i>
           <span>Humidity: {data.main?.humidity} %</span>
           </div>
           <div className='container-btn'>
