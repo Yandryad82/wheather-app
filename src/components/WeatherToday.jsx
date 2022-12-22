@@ -27,6 +27,17 @@ const WeatherToday = () => {
   const tempctotempf = () => {
     setChangeTemp(!changeTemp);
   }
+
+  const [backgroundImage, setBackgroundImage] = useState(true);
+
+  const imgSol = "https://lh6.ggpht.com/E62FdNiGOnq0I77Xl5B7YMa9c2PFpAlK1zW-gi4jX1auhjdSwhjfRWgiDSd15txRNKoB=w1200-h630-p-k-no-nu";
+
+  const imgNub = ""
+
+  const changeImage = () => {
+    setBackgroundImage(!backgroundImage);
+  }
+  
   //
   
   return (
@@ -39,8 +50,8 @@ const WeatherToday = () => {
         <span>{format(new Date(), "PPP")}</span>
       </div>
       <div className='container-termometer-icon'>
-      <i className="fa-solid fa-temperature-three-quarters"></i>
-      <span>{changeTemp ? tempC : tempF} {changeTemp ? '℃' : '℉'}</span>
+        <i className="fa-solid fa-temperature-three-quarters"></i>
+        <span>{changeTemp ? tempC : tempF} {changeTemp ? '℃' : '℉'}</span>
       </div>
       <div className='information-container'>
         <div className='icon-weather-state'>
@@ -50,19 +61,19 @@ const WeatherToday = () => {
         <div className='icons-information'>
           <h3>Weather Informacion</h3>
           <div className='container-wind-speed'>
-          <i className="fa-solid fa-wind"></i>
+            <i className="fa-solid fa-wind"></i>
           <span>Wind Speed: {data.wind?.speed} m/s</span>
           </div>
           <div className='container-cloud'>
-          <i className="fa-solid fa-cloud"></i>
+            <i className="fa-solid fa-cloud"></i>
           <span>Clouds: {data.clouds?.all} %</span>
-          </div>
+            </div>
           <div className='container-humididy'>
-          <i className="fa-solid fa-temperature-three-quarters"></i>
+            <i className="fa-solid fa-temperature-three-quarters"></i>
           <span>Humidity: {data.main?.humidity} %</span>
           </div>
           <div className='container-btn'>
-          <button onClick={tempctotempf}>Degrees ℉/℃</button>
+            <button onClick={tempctotempf}>{changeTemp ? '℉' : '℃'}</button>
           </div>
         </div>
       </div>
