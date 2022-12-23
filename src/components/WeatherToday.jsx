@@ -7,7 +7,7 @@ import { format } from 'date-fns';
 
 const WeatherToday = () => {
   
-  //Todo el código JS
+  //Todo el código JS se escribe aquí
         
   const [data, setData] = useState({})
 
@@ -36,7 +36,7 @@ const WeatherToday = () => {
 
   let time;
   
-  if(data.clouds?.all >= 90) {
+  if(data.clouds?.all >= 70) {
     time = true
   }else{
     time = false
