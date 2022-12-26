@@ -12,7 +12,7 @@ let dateUpdate = now[0]+now[1];
 let h = parseInt(dateUpdate);
 let h1;
 
-if(h>=18){
+if(h>=20){
   h1=true
 }else{
   h1=false
