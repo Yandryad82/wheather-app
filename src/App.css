@@ -13,14 +13,24 @@ html, body {
 
 body{
   font-family: 'Rubik', sans-serif;
-  padding: 3rem 1rem 1rem;
     
 }
 
 .container-app {
-  width: 100%;
+  height: 100vh;
   display: flex;
-  padding: 6rem;
   justify-content: center;
   align-items: center;
+  
 }
+
+.container-app.evening {
+  background-image: url('../src/images/heaven-5114501_1920.jpg');
+}
+
+.container-app.day {
+  background-image: url('../src/images/sun-3588618_1920.jpg');
+  background-repeat: no-repeat;
+}
+
+
