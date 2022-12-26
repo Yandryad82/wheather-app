@@ -29,8 +29,7 @@ const WeatherToday = () => {
     setChangeTemp(!changeTemp);
   }
  
-  //const imgSol = "https://lh6.ggpht.com/E62FdNiGOnq0I77Xl5B7YMa9c2PFpAlK1zW-gi4jX1auhjdSwhjfRWgiDSd15txRNKoB=w1200-h630-p-k-no-nu";
-  
+    
   const imgNub = "https://static.vecteezy.com/system/resources/previews/012/806/414/original/3d-cartoon-weather-rain-clouds-with-thunderstorm-dark-cloud-sign-with-lightning-isolated-on-transparent-background-3d-render-illustration-png.png"
 
   const [backgroundImage, setBackgroundImage] = useState(true);
@@ -42,10 +41,7 @@ const WeatherToday = () => {
   }else{
     time = false
   }
-  
-  const changeImage = () => {
-    setBackgroundImage(imgNub)
-  }
+    
   //
   
   return (
