@@ -9,16 +9,42 @@ import imgSol from '../images/sol.png'
 const WeatherToday = () => {
   
   //Todo el código JS se escribe aquí
-        
-  const [data, setData] = useState({})
+
+  // Detectando Posicion
+  const [latitude, setLatitude] = useState('');
+
+  const [longitude, setLongitude] = useState('');
+
+  const [load, setLoand] = useState(true);
 
   useEffect(() => {
-    axios.get('https://api.openweathermap.org/data/2.5/weather?q=Montevideo&appid=4bd21af8999321574db120507ed62a45')
+    navigator.geolocation.getCurrentPosition((position) => {
+    setLatitude(position.coords?.latitude);
+    setLongitude(position.coords?.longitude);
+    
+    })
+  }, []);
+  //        
+  
+  const [data, setData] = useState({})
+
+  //useEffect(() => {
+  //  axios.get('https://api.openweathermap.org/data/2.5/weather?q=Montevideo&appid=4bd21af8999321574db120507ed62a45')
+  //  .then(res => setData(res.data));
+  //}, []);
+  console.log(latitude)
+  console.log(longitude)
+ 
+  const API_location = `https://api.openweathermap.org/data/2.5/weather?`;
+  const API_Key = `4bd21af8999321574db120507ed62a45`;
+
+  useEffect(() => {
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_Key}`)
     .then(res => setData(res.data));
   }, []);
 
   console.log(data)
-
+  
   const tempC = ((data.main?.temp)-273.15).toFixed(2);
 
   const tempF = (tempC * 9/5 + 32).toFixed(2);
@@ -73,7 +99,7 @@ const WeatherToday = () => {
           <span>Clouds: {data.clouds?.all} %</span>
             </div>
           <div className='container-humididy'>
-          <i class='bx bx-cloud-rain bx-sm'></i>
+          <i className='bx bx-cloud-rain bx-sm'></i>
           <span>Humidity: {data.main?.humidity} %</span>
           </div>
           <div className='container-btn'>

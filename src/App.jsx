@@ -19,16 +19,16 @@ if(h>=20){
   h1=false
 }
 
-window.addEventListener('load', () => {
-  const container_loader = document.querySelector('.container_loader');
-  container_loader.style.opacity = 0;
-  container_loader.style.visibility = 'hidden';
-})
+//window.addEventListener('load', () => {
+//  const container_loader = document.querySelector('.container_loader');
+//  container_loader.style.opacity = 0;
+//  container_loader.style.visibility = 'hidden';
+//})
 
   return (
     <div className="App">
       <div className={`container-app ${h1 ? 'evening' : 'day'}`}>
-        <Loading/>
+        
         <WeatherToday/>
       </div>
       
