@@ -32,9 +32,7 @@ const WeatherToday = () => {
   //  axios.get('https://api.openweathermap.org/data/2.5/weather?q=Montevideo&appid=4bd21af8999321574db120507ed62a45')
   //  .then(res => setData(res.data));
   //}, []);
-  console.log(latitude)
-  console.log(longitude)
- 
+   
   const API_location = `https://api.openweathermap.org/data/2.5/weather?`;
   const API_Key = `4bd21af8999321574db120507ed62a45`;
 
@@ -43,8 +41,7 @@ const WeatherToday = () => {
     .then(res => setData(res.data));
   }, []);
 
-  console.log(data)
-  
+   
   const tempC = ((data.main?.temp)-273.15).toFixed(2);
 
   const tempF = (tempC * 9/5 + 32).toFixed(2);
