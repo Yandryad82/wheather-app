@@ -17,7 +17,11 @@
     justify-content: center;
     align-items: center;
     gap: .5rem;
-    
+   
+}
+
+.container-title h3 {
+    font-size: 14px;
 }
 
 .container-date {
@@ -66,7 +70,6 @@
     color: darkorange;
     font-weight: bold;
 }
-
 
 .information-container {
     width: 90%;
@@ -169,7 +172,11 @@
         gap: .5rem;
         
     }
-    
+
+    .container-title h3 {
+        font-size: 18px;
+    }
+        
     .container-date {
         width: 100%;
         position: relative;        
