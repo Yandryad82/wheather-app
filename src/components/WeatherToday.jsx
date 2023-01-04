@@ -11,35 +11,36 @@ const WeatherToday = () => {
   //Todo el código JS se escribe aquí
 
   // Detectando Posicion
-  const [latitude, setLatitude] = useState('');
+ // const [latitude, setLatitude] = useState(null);
+ // const [longitude, setLongitude] = useState(null);
 
-  const [longitude, setLongitude] = useState('');
-
-  const [load, setLoand] = useState(true);
-
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition((position) => {
-    setLatitude(position.coords?.latitude);
-    setLongitude(position.coords?.longitude);
-    
-    })
-  }, []);
-  //        
+ // useEffect(() => {
+ //   navigator.geolocation.getCurrentPosition((position) => {
+ //     setLatitude(position.coords.latitude);
+ //     setLongitude(position.coords.longitude);
+ //   });
+ // }, []);
+  
+  //   
+   
   
   const [data, setData] = useState({})
-
-  //useEffect(() => {
-  //  axios.get('https://api.openweathermap.org/data/2.5/weather?q=Montevideo&appid=4bd21af8999321574db120507ed62a45')
-  //  .then(res => setData(res.data));
-  //}, []);
-   
-  const API_location = `https://api.openweathermap.org/data/2.5/weather?`;
-  const API_Key = `4bd21af8999321574db120507ed62a45`;
-
+     
   useEffect(() => {
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_Key}`)
-    .then(res => setData(res.data));
-  }, []);
+    function success(pos) {
+        const crd = pos.coords;
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=4bd21af8999321574db120507ed62a45`)
+            .then(res => setData(res.data))
+        console.log('Your current position is:');
+        console.log(`Latitude : ${crd.latitude}`);
+        console.log(`Longitude: ${crd.longitude}`);
+    }
+    function error(err) {
+        console.warn(`ERROR(${err.code}): ${err.message}`);
+    }
+    navigator.geolocation.getCurrentPosition(success, error);
+}, [])
+  //
 
    
   const tempC = ((data.main?.temp)-273.15).toFixed(2);
@@ -51,8 +52,7 @@ const WeatherToday = () => {
   const tempctotempf = () => {
     setChangeTemp(!changeTemp);
   }
- 
-    
+     
   const imgNub = "https://static.vecteezy.com/system/resources/previews/012/806/414/original/3d-cartoon-weather-rain-clouds-with-thunderstorm-dark-cloud-sign-with-lightning-isolated-on-transparent-background-3d-render-illustration-png.png"
 
   const [backgroundImage, setBackgroundImage] = useState(true);
